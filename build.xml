@@ -1,0 +1,26 @@
+<?xml version="1.0" ?> 
+
+<project name="Winnova" default="jar">
+
+<target name="jar" depends="run">
+<mkdir dir="./jar" /> 
+<jar destfile="./jar/second.jar" basedir="./java">
+<manifest>
+  <attribute name="main-class" value="Demo" /> 
+  </manifest>
+  </jar>
+  </target>
+
+<target name="run" depends="compile">
+  <echo>java file running</echo> 
+
+<java classname="Demo">
+<classpath path="./java" /> 
+  </java>
+  </target>
+
+<target name="compile">
+  <echo>java file compiled</echo> 
+  <javac srcdir="./java" destdir="./java" /> 
+  </target>
+  </project>
